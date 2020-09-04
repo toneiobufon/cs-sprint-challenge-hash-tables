@@ -1,8 +1,22 @@
+
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
     # Your code here
+    #to flatten arrays
+    flat = [i for sub in arrays for i in sub]
+
+    count = {}
+    for num in flat:
+        if num not in count:
+            count[num] = 1
+        else:
+            count[num] +=1
+    
+    result = [i[0] for i in list(count.items()) if i[1] == len(arrays)]
+
 
     return result
 
